@@ -1,0 +1,480 @@
+ÿş::RECORE-DEV
+::BeginOFCORE
+:: 1£¬2¹Ø»ú 3.¹ØÍø4¿ªÍø5bat±à¼­Æ÷
+@echo off
+color 6F
+set version=CCM 14.5.2 REACNWM
+set buildtype=Stable
+set coreversion=R1
+set coretype=RECORE
+set buildate=22/11/21
+set ccmkey=49fh823d
+goto shouye1
+:RECOR0
+echo  Çë×ÔĞĞÇ°Íù¹ÙÍøÏÂÔØ!
+start https://github.com/Djrrv/CCM_RC
+pause
+goto shouye1
+:RECOR1
+cls
+shutdown -s -t 1
+pause
+:RECOR2
+cls
+sildetoshutdown
+pause
+:RECOR3
+netsh interface set interface "ÒÔÌ«Íø" disabled
+netsh interface set interface "ÍøÂç" disabled
+netsh interface set interface "WLAN" disabled
+netsh interface set interface "WIFI" disabled
+netsh interface set interface "±¾µØÁ¬½Ó" disabled
+pause
+:RECOR4
+netsh interface set interface "ÒÔÌ«Íø" enabled
+netsh interface set interface "ÍøÂç" enabled
+netsh interface set interface "WLAN" enabled
+netsh interface set interface "WIFI" enabled
+netsh interface set interface "±¾µØÁ¬½Ó" enabled
+:RECOR5
+cls
+title Bat Editor
+echo »¶Ó­À´µ½bat±à¼­Æ÷
+:newproject
+cls
+echo ÇëÃüÃûÄúµÄÏîÄ¿
+set /p projectname= ÔÚ´ËÊäÈëÏîÄ¿Ãû
+echo @echo off>%projectname%.bat
+:startedit
+cls
+echo ÄúÏÖÔÚÒª×öÊ²Ã´?
+set /p aakk= 1.ËµÒ»¾ä»° 2.»ªÈñÉ±ÊÖ¹¦ÄÜ°ü 3.¼ÓÈëÑ¡Ôñ 4.¶¨Òå¹¦ÄÜ
+if /i '%aakk%'=='1' goto sayec
+if /i '%aakk%'=='2' goto hkgnb
+if /i '%aakk%'=='3' goto addchoice
+if /i '%aakk%'=='4' goto addfunction
+:sayec
+echo ÄúÒªËµÊ²Ã´?
+set /p awakk= 
+echo echo %awakk%>>%projectname%.bat
+echo Done!
+pause
+goto startedit
+:hkgnb
+echo Õâ½«Ìí¼Ó»ªÈñÉ±ÊÖµÄ¹¦ÄÜµ½ÄúµÄÏîÄ¿Àï£¬È·¶¨Âğ£¿
+pause
+echo :ma>>%projectname%.bat
+echo cls>>%projectname%.bat
+echo taskkill /f /im RedAgent.exe>>%projectname%.bat
+echo goto ma>>%projectname%.bat
+echo Done
+pause
+goto startedit
+:addchoice
+echo ÄúÒªÎÊÊ²Ã´?
+set /p Ques= 
+echo ÄúµÄ±äÁ¿Ãû?
+set /p Bname= 
+echo set /p %Bname%= %Ques%>>%projectname%.bat
+echo ÓÃ»§ÊäÈë?
+set /p pand1= 
+echo ·µ»Ø½á¹û£¿
+echo ·µ»Ø½á¹ûÓ¦¸ÃÊÇ?
+set /p aawkk= 1.echo 2.goto
+if /i '%aawkk%'=='1' goto shuohuahuida
+if /i '%aawkk%'=='2' goto gotohuida
+:shuohuahuida
+set /p returndata= ÊäÈëÒªËµµÄ»°
+echo if /i '%Bname%'=='%pand1%' echo %returndata%>>%projectname%.bat
+:gotohuida
+echo Äã ÒªÈ¥ÄÄ?
+set /p wherego= 
+echo if /i '%Bname%'=='%pand1%' goto %wherego%>>%projectname%.bat
+:asking
+echo ÊÇ·ñĞèÒªÔÚÌí¼ÓÒ»¸öÅĞ¶Ï£¿
+set /p aakk= 1.Yes 2.No
+if /i '%aakk%'=='1' goto EYES
+if /i '%aakk%'=='2' goto ENOS
+:EYES
+echo ÓÃ»§ÊäÈë?
+set /p pand1= 
+echo ·µ»Ø½á¹û£¿
+echo ·µ»Ø½á¹ûÓ¦¸ÃÊÇ?
+set /p aawkk= 1.echo 2.goto
+if /i '%aawkk%'=='1' goto shuohuahuida
+if /i '%aawkk%'=='2' goto gotohuida
+:shuohuahuida
+set /p returndata= ÊäÈëÒªËµµÄ»°
+echo if /i '%Bname%'=='%pand1%' echo %returndata%>>%projectname%.bat
+:gotohuida
+echo Äã ÒªÈ¥ÄÄ?
+set /p wherego= 
+echo if /i '%Bname%'=='%pand1%' goto %wherego%>>%projectname%.bat
+goto asking
+goto ENOS
+:ENOS
+echo Done
+pause
+goto startedit
+:addfunction
+echo ÇëÊäÈëÄãÒª½ĞÕâ¸ö¹¦ÄÜµÄÃû×Ö¡£
+set /p funame= 
+echo :%funame%>>%projectname%.bat
+echo Done
+pause
+goto startedit
+:RECOR6
+cls
+::ÉèÖÃÉ±½ø³Ì´ÎÊıkillcsÎª0
+set  killcs=0
+:startkill
+echo µÚ%killcs%´ÎÉ±½ø³Ì!
+taskkill /f /im RedAgent.exe
+::É±½ø³Ì³É¹¦£¬´ÎÊı+1
+set /a killcs+=1
+::·µ»Ø¿ªÊ¼É±½ø³Ì
+goto startkill
+:RECOR7
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools /t reg_dword /d 00000001 /
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools/tREG_DWORD/d1/f
+:RECOR8
+@echo off&setlocal enabledelayedexpansion
+set li0=©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
+set li1=©¦©°©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©Ğ©´©¦1
+for /l %%a in (2,1,18) do (set li%%a=©¦©À©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©È©¦%%a)
+set li19=©¦©¸©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©¼©¦19
+set li20=©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+set li21=   A B C D E F G H I J K L M N O P Q R S
+for %%a in (%li21%) do (set/a .+=1,%%a=.&set z!.!=%%a)
+set z0= &set z20= &set "z21= "
+
+set li5=!li5!   Îå Æå ×Ó ÈË »ú ¶Ô Õ½
+set li7=!li7!        Åú ´¦ Àí
+set li9=!li9!   µç ÄÔ Ë® Æ½ ÖĞ µÈ
+set li12=!li12!  ÓÉ netbenton ±àĞ´Íê³É
+set li14=!li14!  ÆåÅÌÉè¼Æ²ÎÕÕÁË batman
+title   Åú´¦ÀíÎå×ÓÆå
+
+
+set str=###################
+set .=0
+for /l %%a in (1,1,19) do (
+        set he%%a=!str!&set sh%%a=!str!
+        for /l %%b in (1,1,19) do set [%%a.%%b=0
+)
+
+set .=33
+for /l %%a in (5,1,19) do (
+        set pi%%a=!str:~,%%a!&set ni%%a=!str:~,%%a!
+        set pi!.!=!str:~,%%a!&set ni!.!=!str:~,%%a!
+        set/a .-=1
+)
+
+
+set ¡ñ=¡ğ&set a¡ñ=µçÄÔ
+set ¡ğ=¡ñ&set a¡ğ=Íæ¼Ò
+
+::ÉèÖÃµçÄÔIQ
+set idea=@@@@#1 #@@@@5 @#@@@4 @@@#@2 @@#@@3 $#$$$4 $$#$$3 $$$#$2 $$$$#1 #$$$$5 #$$#$#3 #$#$$#4 #@@@##2 ##@@@#5 #@@#@#3 #@#@@#4 #@@@#1
+set idea=!idea! ##@@@4 @@@##2 ##$$$#5 #$$$##2 #$$$#1 ##@@#4 #@@##2 ##$$#4 #$$##2 #$#$#3 @@###3 ###@@3
+set idea=!idea! ##@##2 ###@#3 #@###3 @####4 ####@2 ##############7 ###########6 ########4 #####3 ####2
+set ttr=!idea:@=¡ñ!&set ttr=!ttr:$=¡ğ!
+for %%a in (!ttr!) do (set var=%%a&set !var:~,-1!=!var:~-1!&set idea=!idea! !var:~,-1!)
+set ttr=
+::ÉèÖÃµçÄÔIQ
+
+:restart
+for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
+setlocal enabledelayedexpansion
+set li21=!li21!      rebootÖØĞÂ¿ªÊ¼,exitÍË³ö¡£
+set /p var=Ñ¡ÔñË­ÏÈÏÂ[ W,Íæ¼Ò  D,µçÄÔ  Q,ÍË³ö ]:
+if /i "!var!" equ "Q" goto :eof
+if /i "!var!" equ "W" (set zhi=¡ñ) else (set zhi=¡ğ)
+echo.
+
+
+:loop
+if %zhi% equ ¡ñ goto :men
+set .=&set put1=
+for %%a in (!idea!) do (
+        for %%b in (he sh) do (
+                for /l %%c in (1,1,19) do (
+                        if "!%%b%%c:%%a=!" neq "!%%b%%c!" set/a .+=1&set put!.!=%%b %%c
+        )        )
+        for %%b in (pi ni) do (
+                for /l %%c in (5,1,33) do (
+                        if "!%%b%%c:%%a=!" neq "!%%b%%c!" set/a .+=1&set put!.!=%%b %%c
+        )        )
+if defined put1 set put=%%a&goto :get
+)
+
+echo. ÒÑ¾­ºÍÆåÁË
+pause
+goto :restart
+
+:men
+for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
+set /p user=[ÁĞÇ°£¬ĞĞºó]:
+echo.
+if "!user!" equ "reboot" endlocal&goto :restart
+if "!user!" equ "exit" exit
+set/a pos=!user:~0,1!,poh=!user:~1,2!,var=pos-1 2>nul
+if not defined [!poh!.!pos! echo ÊäÈëµã²»´æÔÚ&goto :men
+if "!he%poh%:~%var%,1!" neq "#" echo ¸ÃµãÒÑ¾­ÓĞ×Ó&goto men
+goto :getok
+
+:get
+set /a .=!random!%%.+1
+set put=!put%.%! !put!
+::Ëæ»úÈ¡×î¼ÑµÄ×ß·¨
+
+for /f "tokens=1-3" %%a in ("%put%") do (
+        set var=!%%a%%b:*%%c=!srqponmlkjihgfedcba0
+        set/a var=!var:~19,1!+%%c
+        if "%%a" equ "he" (set/a poh=%%b,pos=20-var)
+        if "%%a" equ "sh" (set/a poh=20-var,pos=%%b)
+        if %%b lss 19 (set/a var=%%b-var+1) else (set/a var=38-%%b-var+1)
+        if "%%a" equ "pi" (if %%b lss 19 (set/a pos=var,poh=%%b-var+1) else (set/a poh=20-var,pos=%%b-19+var))
+        if "%%a" equ "ni" (if %%b lss 19 (set/a pos=var,poh=19-%%b+var) else (set/a poh=var,pos=%%b-19+var))
+)
+echo  µçÄÔ×îºóÏÂÔÚ£º!z%pos%!!z%poh%!(%poh%)
+
+:getok
+set zhi=!%zhi%!&set win=!zhi!!zhi!!zhi!!zhi!!zhi!
+set/a piph=poh+pos-1,lips=pos+1,niph=19+pos-poh
+
+if !piph! lss 19 (set/a pips=pos) else (set/a pips=20-poh)
+if !niph! lss 19 (set/a nips=pos) else (set/a nips=poh)
+
+
+for %%a in ("li!poh! !lips!" "he!poh! !pos!" "sh!pos! !poh!" "pi!piph! !pips!" "ni!niph! !nips!") do (
+        for /f "tokens=1,2" %%b in (%%a) do (
+                if defined %%b (
+                        set/a .=%%c-1
+                        for %%d in (!.!) do (set %%b=!%%b:~0,%%d!%zhi%!%%b:~%%c!)
+                if "!%%b:%win%=!" neq "!%%b!" set win=y
+                )
+        )
+)
+set/a asc%zhi%+=1
+if !win! neq y goto :loop
+for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
+set/p=   !a%zhi%! %zhi%×Ó µÚ!asc%zhi%!ÊÖ  Ê¤³ö     <nul
+pause
+endlocal&goto :restart
+:RECOR9
+cls
+echo    __________   __________   ___      __
+echo    /        /   /        /   /  \    /   \
+echo   /   -------   /   -------   / / \ \  / /\  \
+echo   /   /       /   /        / /   \_\/_/  \  \
+echo  /   /______ /   /_______  / /           \  \
+echo  /__________/___________/ /_/             \__\
+echo CCM
+echo µ±Ç°°æ±¾ºÅ %version%
+echo ±àÒëÊ±¼ä %builddate%
+echo ÄÚºË %codetype%
+echo ÄÚºË°æ±¾ %buildtype%
+echo 
+pause
+:RECOR10
+cls
+set /p q=ÊäÈëip»òÍøÖ·:
+:dddstart
+::ËÀÍöÖ®ping
+cls
+ping %q% -t -l 65500
+goto shouye1
+:RECOR11
+cls
+mountvol c:\ /d
+pause
+goto shouye1
+:RECOR12
+@echo off
+mode con cols=80 lines=50
+color 1f
+if exist "%SystemRoot%\SysWOW64" path %path%;%windir%\SysNative;%SystemRoot%\SysWOW64;%~dp0
+bcdedit >nul
+if '%errorlevel%' NEQ '0' (goto UACPrompt) else (goto UACAdmin)
+:UACPrompt
+%1 start "" mshta vbscript:createobject("shell.application").shellexecute("""%~0""","::",,"runas",1)(window.close)&exit
+exit /B
+:UACAdmin
+cd /d "%~dp0"
+echo µ±Ç°ÔËĞĞÂ·¾¶ÊÇ£º%CD%
+echo ÒÑ»ñÈ¡¹ÜÀíÔ±È¨ÏŞ
+:CMD
+cls
+echo.
+echo                            ¡¾ĞéÄâ´ÅÅÌ¹ÜÀí¡¿
+echo.
+echo                          1------------´ı²Ù×÷µÄ´ÅÅÌ
+echo.
+echo                          2------------´´½¨ĞéÄâ´ÅÅÌ
+echo.
+echo                          3------------¹ÒÔØĞéÄâ´ÅÅÌ
+echo.
+echo                          4------------¶Ï¿ªĞéÄâ´ÅÅÌ
+echo.
+echo                          5------------É¾³ı´ÅÅÌÎÄ¼ş
+set /p CS= ÇëÊäÈëÑ¡Ôñ------------
+if "%CS%"=="1"  goto cmd1
+if "%CS%"=="2"  goto cmd2
+if "%CS%"=="3"  goto cmd3
+if "%CS%"=="4"  goto cmd4
+if "%CS%"=="5"  goto cmd5
+:cmd1
+set /p VF= ÇëÊä´ı²Ù×÷µÄĞéÄâ´ÅÅÌÎÄ¼şÂ·¾¶------------
+goto CMD
+:cmd2
+set /p VU=ÇëÊäÈëĞéÄâ´ÅÅÌ´óĞ¡£¨µ¥Î»M£©------------
+echo  CREATE VDISK FILE="%VF%" MAXIMUM=%VU%>ĞéÄâ´ÅÅÌ²Ù×÷.txt
+diskpart /s  ĞéÄâ´ÅÅÌ²Ù×÷.txt
+pause
+goto CMD
+:cmd3
+echo SELECT VDISK FILE="%VF%">ĞéÄâ´ÅÅÌ²Ù×÷.txt
+echo attach vdisk>>ĞéÄâ´ÅÅÌ²Ù×÷.txt
+diskpart /s  ĞéÄâ´ÅÅÌ²Ù×÷.txt
+pause
+goto CMD
+:cmd4
+echo SELECT VDISK FILE="%VF%">ĞéÄâ´ÅÅÌ²Ù×÷.txt
+echo detach vdisk>>ĞéÄâ´ÅÅÌ²Ù×÷.txt
+diskpart /s  ĞéÄâ´ÅÅÌ²Ù×÷.txt
+pause
+goto CMD
+:cmd5
+del /f /q %VF%
+echo ³É¹¦É¾³ı´ÅÅÌVHD/VHDXÔ´ÎÄ¼şÎÄ¼ş
+pause
+goto CMD
+:RECOR13
+cls
+title ¼ÓÃÜ³ÌĞò
+if EXIST "ÉÏÁËËøµÄÎÄ¼ş¼Ğ" goto UNLOCK
+if NOT EXIST ¼ÓÃÜÎÄ¼ş goto MDLOCKER
+:CONFIRM
+echo ÄúÈ·¶¨ÒªËø¶¨ÎÄ¼ş¼ĞÂğ?(Y/N)¡ºY=ÊÇ-N=²»¡»
+set/p "cho=(more than)"
+if %cho%==Y goto LOCK
+if %cho%==y goto LOCK
+if %cho%==n goto END
+if %cho%==N goto END
+echo Ñ¡ÔñÎŞĞ§.
+goto CONFIRM
+:LOCK
+ren ¼ÓÃÜÎÄ¼ş "ÉÏÁËËøµÄÎÄ¼ş¼Ğ"
+attrib +h +s "ÉÏÁËËøµÄÎÄ¼ş¼Ğ"
+echo ÎÄ¼ş¼ĞÒÑËø¶¨
+goto End
+:UNLOCK
+echo ÇëÊäÈëÃÜÂë´ò¿ªÎÄ¼ş¼Ğ
+set/p "pass=(more than)"
+if NOT %pass%== %INPASSWORD% goto FAIL
+attrib -h -s "ÉÏÁËËøµÄÎÄ¼ş¼Ğ"
+ren "ÉÏÁËËøµÄÎÄ¼ş¼Ğ" ¼ÓÃÜÎÄ¼ş
+echo ÎÄ¼ş¼Ğ½âËø³É¹¦
+goto End
+:FAIL
+echo ÃÜÂëÎŞĞ§
+goto end
+:MDLOCKER
+md ¼ÓÃÜÎÄ¼ş
+echo ¼ÓÃÜÎÄ¼ş ³É¹¦´´½¨
+goto End
+:End
+:RECOR14
+CLS
+rar.exe a -ep1 -r0 -exit -hpfbx -k -rr -ma5 -m0 -- "%dp0~\Crp.rar" "%dp0~\a"
+pause goto shouye1
+:RECOR15
+rar.exe a -ep1 -r0 -exit -hpfbx -k -rr -ma5 -m0 -- "%dp0~:\%%a.rar" "C:\Crypto\%%a"
+::beginningofmain
+:shouye1
+cls
+title %version% ±£ÁôËùÓĞÈ¨Àû ÏÖÔÚÊÇ±±¾©Ê±¼ä %date%
+color 6F
+echo Ê¹ÓÃ´ËÈí¼ş´ú±íÄúÍ¬ÒâÎÒÃÇµÄÓÃ»§Ğ­Òé
+echo ÇëÇ°Íùgithub²é¿´ÓÃ»§Ğ­Òé
+echo                                                            Ñ¡Ôñ
+echo        1.¼ì²é¸üĞÂ 2.Ğ¡ÓÎÏ· 3.HuaRuiKiller Lite  4.¹Ø»ú 5.µ¯³öcÅÌ 6.¸üĞÂÈÕÖ¾ 7.ÍøÂç²âÑ¹ 8.Bat±à¼­Æ÷(ÊÔÔËĞĞ) 9.Ò»¼üÌÓ¼ÆËã»ú¿Î 10.²é¿´°æ±¾ºÅ 11.ĞéÄâ´ÅÅÌ 12.¼ÓÃÜÎÄ¼ş¼Ğ  13.ÎÄ¼ş¼ÓÃÜ X.ÍË³ö
+set /p a=ÇëÑ¡Ôñ 
+if /i '%a%'=='1' goto RECOR0
+if /i '%a%'=='2' goto RECOR8
+if /i '%a%'=='3' goto RECOR6
+if /i '%a%'=='4' goto CCMDEV2
+if /i '%a%'=='5' goto RECOR11
+if /i '%a%'=='6' goto CCMDEV3
+if /i '%a%'=='7' goto RECOR10
+if /i '%a%'=='8' goto RECOR5
+if /i '%a%'=='9' goto CCMDEV1
+if /i '%a%'=='X' exit
+if /i '%a%'=='10' goto RECOR9
+if /i '%a%'=='11' goto RECOR12
+if /i '%a%'=='12' goto CCMDEV4
+if /i '%a%'=='13' goto CCMDEV5
+goto shouye1
+::CCM×Ô¶¨ÓÃ»§²ã
+:CCMDEV1
+cls
+echo ÇëÑ¡Ôñ¼æÈİÄ£Ê½»òÎŞµĞÄ£Ê½
+echo ¼æÈİÄ£Ê½Ö»Ê¹ÓÃ¾É°æ»ªÈñÉ±ÊÖ·½°¸£¬ÎŞµĞÄ£Ê½Ö¸Ê¹ÓÃ¶ÏÍø·½Ê½À´´ïµ½¶Ô»ªÈñµÄÒ»»÷ÖÂÃü¡£
+echo ²»¹ıÒ²ÍÆ¼öÊ¹ÓÃProgramKiller ±ÈÈÎºÎ°æ±¾µÄHuaRuiKiller¶¼¸üÓĞĞ§£¬¿ÉÒÔ×îĞ¡»¯ÀÏÊ¦ÇĞÆÁµÈ¡£ÆäĞ§¹ûÄÜ´ïµ½ÓëĞÂ·½°¸ÏàæÇÃÀ
+echo ÊäÈë1Ñ¡Ôñ¼æÈİÄ£Ê½ ÊäÈë2Ñ¡ÔñÎŞµĞÄ£Ê½ ÊäÈë3Ò»¼ü»Ö¸´ÍøÂç
+set /p aqq1=
+if /i '%aqq1%'=='1' goto RECOR6
+if /i '%aqq1%'=='2' goto RECOR3
+if /i '%aqq1%'=='3' goto RECOR4
+:CCMDEV2
+cls
+echo ÊÇ·ñÊ¹ÓÃĞÂ·½°¸?
+set /p aqqq=1 ÊÇ 2 ²»ÊÇ
+if /i '%aqqq%'=='1' goto RECOR1
+if /i '%aqqq%'=='2' goto RECOR2
+echo Error
+goto CCMDEV2
+:CCMDEV3
+cls
+echo 2.0ÈÕÖ¾
+echo 1.0ÊºÉ½´úÂë È«²¿ÖØ¹¹
+echo Ê¹ÓÃĞÂÂß¼­£¬Ğ§ÂÊÉÏÉı50%
+echo 3.0ÈÕÖ¾
+echo ÊºÉ½´úÂë¸ù±¾Ğ´²»ÏÂÈ¥ 3.0¼ÌĞøÓÅ»¯
+echo 4.0ÈÕÖ¾ Ãû³Æ¸ÄÎªCCM(CloudComputerManager)
+echo 5.0ÈÕÖ¾ ´úÂëÏà±È1.0»ù±¾È«²¿ÖØ¹¹£¬ÒÆ³ıÒ»Ğ©ÈİÒ×µ¼ÖÂbugµÄ¹¦ÄÜ
+echo 6.0ÈÕÖ¾È±Ê§
+echo 7.0ĞŞ¸´Ò»Ğ©µ×²ãbug
+echo 8.0Ìí¼Ó¹¦ÄÜ,´ò¿ª×Ô¶¯¼ì²é¸üĞÂ
+echo 9.0-10.0 Ìí¼ÓBat±à¼­Æ÷
+echo Xeon°æ±¾Ìí¼Ó¶àÖÖ¹¦ÄÜ
+echo 12.0 ÒÔÓÅ»¯¸üĞÂÎªÖ÷ È¥³ıÁËÒ»Ğ©ÎŞÓÃ¹¦ÄÜÒÔ¼°½Ó¿Ú
+echo 13.0 È¥³ı´òÓ¡ÈÕÖ¾
+echo 13.1 ¸ÄÓÃĞÂÄÚºË
+echo 14.1 ¼ÓÈëĞéÄâ´ÅÅÌ
+echo 15.1 ¼ÓÈëÎÄ¼ş¼Ğ¼ÓÃÜ
+:CCMDEV4
+cls
+echo ÇëÄúÉè¶¨¼ÓÃÜÎÄ¼ş¼ĞÃÜÂë
+set /p inpassword=
+goto RECOR13
+:CCMDEV5
+title File Crypto
+echo ÎÄ¼ş¼ÓÃÜ¶Ô»·¾³ÓĞºÜ´óÒªÇó£¬²»½¨ÒéĞ¡°×Ê¹ÓÃ
+echo ÇëÑ¡ÔñÄ£Ê½
+echo 1.µ¥¸öÎÄ¼ş¼ÓÃÜ 2.¶à¸öÎÄ¼ş¼ÓÃÜ 3.ÍË³ö
+set /p Crpmode=
+if /i '%Crpmode%'=='1' goto Nex
+if /i '%Crpmode%'=='2' goto Mlo
+if /i '%Crpmode%'=='3' goto shouye1
+goto CCMDEV5
+:Nex
+echo Çë½«Òª¼ÓÃÜµÄÎÄ¼şÃüÃûÎªCrp ¸ñÊ½rar ·ÅÔÚÄ¿Â¼Àï
+pause
+goto RECOR14
+:Mlo
+echo Çë½«ËùÓĞĞèÒª¼ÓÃÜµÄÎÄ¼ş·ÅÔÚ±¾Ä¿Â¼
+echo ¼ÓÃÜÍê³ÉÄ¿Â¼:c:\Crypto
+pause
+goto RECOR15
