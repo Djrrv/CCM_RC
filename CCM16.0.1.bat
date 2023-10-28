@@ -1,9 +1,9 @@
 ::RECORE-DEV
 ::BeginOFCORE
-:: 1£¬2¹Ø»ú 3.¹ØÍø4¿ªÍø5bat±à¼­Æ÷
+:: 1ï¼Œ2å…³æœº 3.å…³ç½‘4å¼€ç½‘5batç¼–è¾‘å™¨
 @echo off
 color 6F
-set version=CCM 16.0.1 Multi-Turbo
+set version=CCM 16.0.1
 set buildtype=Stable
 set codetype=G1
 set coretype=RECORE
@@ -11,7 +11,7 @@ set builddate=23/1/1
 set ccmkey=49fh823d
 goto shouye1
 :RECOR0
-echo  Çë×ÔÐÐÇ°Íù¹ÙÍøÏÂÔØ!
+echo  è¯·è‡ªè¡Œå‰å¾€å®˜ç½‘ä¸‹è½½!
 start https://github.com/Djrrv/CCM_RC
 pause
 goto shouye1
@@ -24,44 +24,44 @@ cls
 sildetoshutdown
 pause
 :RECOR3
-netsh interface set interface "ÒÔÌ«Íø" disabled
-netsh interface set interface "ÍøÂç" disabled
+netsh interface set interface "ä»¥å¤ªç½‘" disabled
+netsh interface set interface "ç½‘ç»œ" disabled
 netsh interface set interface "WLAN" disabled
 netsh interface set interface "WIFI" disabled
-netsh interface set interface "±¾µØÁ¬½Ó" disabled
+netsh interface set interface "æœ¬åœ°è¿žæŽ¥" disabled
 pause
 :RECOR4
-netsh interface set interface "ÒÔÌ«Íø" enabled
-netsh interface set interface "ÍøÂç" enabled
+netsh interface set interface "ä»¥å¤ªç½‘" enabled
+netsh interface set interface "ç½‘ç»œ" enabled
 netsh interface set interface "WLAN" enabled
 netsh interface set interface "WIFI" enabled
-netsh interface set interface "±¾µØÁ¬½Ó" enabled
+netsh interface set interface "æœ¬åœ°è¿žæŽ¥" enabled
 :RECOR5
 cls
 title Bat Editor
-echo »¶Ó­À´µ½bat±à¼­Æ÷
+echo æ¬¢è¿Žæ¥åˆ°batç¼–è¾‘å™¨
 :newproject
 cls
-echo ÇëÃüÃûÄúµÄÏîÄ¿
-set /p projectname= ÔÚ´ËÊäÈëÏîÄ¿Ãû
+echo è¯·å‘½åæ‚¨çš„é¡¹ç›®
+set /p projectname= åœ¨æ­¤è¾“å…¥é¡¹ç›®å
 echo @echo off>%projectname%.bat
 :startedit
 cls
-echo ÄúÏÖÔÚÒª×öÊ²Ã´?
-set /p aakk= 1.ËµÒ»¾ä»° 2.»ªÈñÉ±ÊÖ¹¦ÄÜ°ü 3.¼ÓÈëÑ¡Ôñ 4.¶¨Òå¹¦ÄÜ
+echo æ‚¨çŽ°åœ¨è¦åšä»€ä¹ˆ?
+set /p aakk= 1.è¯´ä¸€å¥è¯ 2.åŽé”æ€æ‰‹åŠŸèƒ½åŒ… 3.åŠ å…¥é€‰æ‹© 4.å®šä¹‰åŠŸèƒ½
 if /i '%aakk%'=='1' goto sayec
 if /i '%aakk%'=='2' goto hkgnb
 if /i '%aakk%'=='3' goto addchoice
 if /i '%aakk%'=='4' goto addfunction
 :sayec
-echo ÄúÒªËµÊ²Ã´?
+echo æ‚¨è¦è¯´ä»€ä¹ˆ?
 set /p awakk= 
 echo echo %awakk%>>%projectname%.bat
 echo Done!
 pause
 goto startedit
 :hkgnb
-echo Õâ½«Ìí¼Ó»ªÈñÉ±ÊÖµÄ¹¦ÄÜµ½ÄúµÄÏîÄ¿Àï£¬È·¶¨Âð£¿
+echo è¿™å°†æ·»åŠ åŽé”æ€æ‰‹çš„åŠŸèƒ½åˆ°æ‚¨çš„é¡¹ç›®é‡Œï¼Œç¡®å®šå—ï¼Ÿ
 pause
 echo :ma>>%projectname%.bat
 echo cls>>%projectname%.bat
@@ -71,43 +71,43 @@ echo Done
 pause
 goto startedit
 :addchoice
-echo ÄúÒªÎÊÊ²Ã´?
+echo æ‚¨è¦é—®ä»€ä¹ˆ?
 set /p Ques= 
-echo ÄúµÄ±äÁ¿Ãû?
+echo æ‚¨çš„å˜é‡å?
 set /p Bname= 
 echo set /p %Bname%= %Ques%>>%projectname%.bat
-echo ÓÃ»§ÊäÈë?
+echo ç”¨æˆ·è¾“å…¥?
 set /p pand1= 
-echo ·µ»Ø½á¹û£¿
-echo ·µ»Ø½á¹ûÓ¦¸ÃÊÇ?
+echo è¿”å›žç»“æžœï¼Ÿ
+echo è¿”å›žç»“æžœåº”è¯¥æ˜¯?
 set /p aawkk= 1.echo 2.goto
 if /i '%aawkk%'=='1' goto shuohuahuida
 if /i '%aawkk%'=='2' goto gotohuida
 :shuohuahuida
-set /p returndata= ÊäÈëÒªËµµÄ»°
+set /p returndata= è¾“å…¥è¦è¯´çš„è¯
 echo if /i '%Bname%'=='%pand1%' echo %returndata%>>%projectname%.bat
 :gotohuida
-echo Äã ÒªÈ¥ÄÄ?
+echo ä½  è¦åŽ»å“ª?
 set /p wherego= 
 echo if /i '%Bname%'=='%pand1%' goto %wherego%>>%projectname%.bat
 :asking
-echo ÊÇ·ñÐèÒªÔÚÌí¼ÓÒ»¸öÅÐ¶Ï£¿
+echo æ˜¯å¦éœ€è¦åœ¨æ·»åŠ ä¸€ä¸ªåˆ¤æ–­ï¼Ÿ
 set /p aakk= 1.Yes 2.No
 if /i '%aakk%'=='1' goto EYES
 if /i '%aakk%'=='2' goto ENOS
 :EYES
-echo ÓÃ»§ÊäÈë?
+echo ç”¨æˆ·è¾“å…¥?
 set /p pand1= 
-echo ·µ»Ø½á¹û£¿
-echo ·µ»Ø½á¹ûÓ¦¸ÃÊÇ?
+echo è¿”å›žç»“æžœï¼Ÿ
+echo è¿”å›žç»“æžœåº”è¯¥æ˜¯?
 set /p aawkk= 1.echo 2.goto
 if /i '%aawkk%'=='1' goto shuohuahuida
 if /i '%aawkk%'=='2' goto gotohuida
 :shuohuahuida
-set /p returndata= ÊäÈëÒªËµµÄ»°
+set /p returndata= è¾“å…¥è¦è¯´çš„è¯
 echo if /i '%Bname%'=='%pand1%' echo %returndata%>>%projectname%.bat
 :gotohuida
-echo Äã ÒªÈ¥ÄÄ?
+echo ä½  è¦åŽ»å“ª?
 set /p wherego= 
 echo if /i '%Bname%'=='%pand1%' goto %wherego%>>%projectname%.bat
 goto asking
@@ -117,7 +117,7 @@ echo Done
 pause
 goto startedit
 :addfunction
-echo ÇëÊäÈëÄãÒª½ÐÕâ¸ö¹¦ÄÜµÄÃû×Ö¡£
+echo è¯·è¾“å…¥ä½ è¦å«è¿™ä¸ªåŠŸèƒ½çš„åå­—ã€‚
 set /p funame= 
 echo :%funame%>>%projectname%.bat
 echo Done
@@ -125,35 +125,35 @@ pause
 goto startedit
 :RECOR6
 cls
-::ÉèÖÃÉ±½ø³Ì´ÎÊýkillcsÎª0
+::è®¾ç½®æ€è¿›ç¨‹æ¬¡æ•°killcsä¸º0
 set  killcs=0
 :startkill
-echo µÚ%killcs%´ÎÉ±½ø³Ì!
+echo ç¬¬%killcs%æ¬¡æ€è¿›ç¨‹!
 taskkill /f /im RedAgent.exe
-::É±½ø³Ì³É¹¦£¬´ÎÊý+1
+::æ€è¿›ç¨‹æˆåŠŸï¼Œæ¬¡æ•°+1
 set /a killcs+=1
-::·µ»Ø¿ªÊ¼É±½ø³Ì
+::è¿”å›žå¼€å§‹æ€è¿›ç¨‹
 goto startkill
 :RECOR7
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools /t reg_dword /d 00000001 /
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools/tREG_DWORD/d1/f
 :RECOR8
 @echo off&setlocal enabledelayedexpansion
-set li0=©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
-set li1=©¦©°©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©Ð©´©¦1
-for /l %%a in (2,1,18) do (set li%%a=©¦©À©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©à©È©¦%%a)
-set li19=©¦©¸©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©Ø©¼©¦19
-set li20=©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+set li0=â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+set li1=â”‚â”Œâ”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”¬â”â”‚1
+for /l %%a in (2,1,18) do (set li%%a=â”‚â”œâ”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¼â”¤â”‚%%a)
+set li19=â”‚â””â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”´â”˜â”‚19
+set li20=â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 set li21=   A B C D E F G H I J K L M N O P Q R S
 for %%a in (%li21%) do (set/a .+=1,%%a=.&set z!.!=%%a)
 set z0= &set z20= &set "z21= "
 
-set li5=!li5!   Îå Æå ×Ó ÈË »ú ¶Ô Õ½
-set li7=!li7!        Åú ´¦ Àí
-set li9=!li9!   µç ÄÔ Ë® Æ½ ÖÐ µÈ
-set li12=!li12!  ÓÉ netbenton ±àÐ´Íê³É
-set li14=!li14!  ÆåÅÌÉè¼Æ²ÎÕÕÁË batman
-title   Åú´¦ÀíÎå×ÓÆå
+set li5=!li5!   äº” æ£‹ å­ äºº æœº å¯¹ æˆ˜
+set li7=!li7!        æ‰¹ å¤„ ç†
+set li9=!li9!   ç”µ è„‘ æ°´ å¹³ ä¸­ ç­‰
+set li12=!li12!  ç”± netbenton ç¼–å†™å®Œæˆ
+set li14=!li14!  æ£‹ç›˜è®¾è®¡å‚ç…§äº† batman
+title   æ‰¹å¤„ç†äº”å­æ£‹
 
 
 set str=###################
@@ -171,30 +171,30 @@ for /l %%a in (5,1,19) do (
 )
 
 
-set ¡ñ=¡ð&set a¡ñ=µçÄÔ
-set ¡ð=¡ñ&set a¡ð=Íæ¼Ò
+set â—=â—‹&set aâ—=ç”µè„‘
+set â—‹=â—&set aâ—‹=çŽ©å®¶
 
-::ÉèÖÃµçÄÔIQ
+::è®¾ç½®ç”µè„‘IQ
 set idea=@@@@#1 #@@@@5 @#@@@4 @@@#@2 @@#@@3 $#$$$4 $$#$$3 $$$#$2 $$$$#1 #$$$$5 #$$#$#3 #$#$$#4 #@@@##2 ##@@@#5 #@@#@#3 #@#@@#4 #@@@#1
 set idea=!idea! ##@@@4 @@@##2 ##$$$#5 #$$$##2 #$$$#1 ##@@#4 #@@##2 ##$$#4 #$$##2 #$#$#3 @@###3 ###@@3
 set idea=!idea! ##@##2 ###@#3 #@###3 @####4 ####@2 ##############7 ###########6 ########4 #####3 ####2
-set ttr=!idea:@=¡ñ!&set ttr=!ttr:$=¡ð!
+set ttr=!idea:@=â—!&set ttr=!ttr:$=â—‹!
 for %%a in (!ttr!) do (set var=%%a&set !var:~,-1!=!var:~-1!&set idea=!idea! !var:~,-1!)
 set ttr=
-::ÉèÖÃµçÄÔIQ
+::è®¾ç½®ç”µè„‘IQ
 
 :restart
 for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
 setlocal enabledelayedexpansion
-set li21=!li21!      rebootÖØÐÂ¿ªÊ¼,exitÍË³ö¡£
-set /p var=Ñ¡ÔñË­ÏÈÏÂ[ W,Íæ¼Ò  D,µçÄÔ  Q,ÍË³ö ]:
+set li21=!li21!      rebooté‡æ–°å¼€å§‹,exité€€å‡ºã€‚
+set /p var=é€‰æ‹©è°å…ˆä¸‹[ W,çŽ©å®¶  D,ç”µè„‘  Q,é€€å‡º ]:
 if /i "!var!" equ "Q" goto :eof
-if /i "!var!" equ "W" (set zhi=¡ñ) else (set zhi=¡ð)
+if /i "!var!" equ "W" (set zhi=â—) else (set zhi=â—‹)
 echo.
 
 
 :loop
-if %zhi% equ ¡ñ goto :men
+if %zhi% equ â— goto :men
 set .=&set put1=
 for %%a in (!idea!) do (
         for %%b in (he sh) do (
@@ -208,25 +208,25 @@ for %%a in (!idea!) do (
 if defined put1 set put=%%a&goto :get
 )
 
-echo. ÒÑ¾­ºÍÆåÁË
+echo. å·²ç»å’Œæ£‹äº†
 pause
 goto :restart
 
 :men
 for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
-set /p user=[ÁÐÇ°£¬ÐÐºó]:
+set /p user=[åˆ—å‰ï¼Œè¡ŒåŽ]:
 echo.
 if "!user!" equ "reboot" endlocal&goto :restart
 if "!user!" equ "exit" exit
 set/a pos=!user:~0,1!,poh=!user:~1,2!,var=pos-1 2>nul
-if not defined [!poh!.!pos! echo ÊäÈëµã²»´æÔÚ&goto :men
-if "!he%poh%:~%var%,1!" neq "#" echo ¸ÃµãÒÑ¾­ÓÐ×Ó&goto men
+if not defined [!poh!.!pos! echo è¾“å…¥ç‚¹ä¸å­˜åœ¨&goto :men
+if "!he%poh%:~%var%,1!" neq "#" echo è¯¥ç‚¹å·²ç»æœ‰å­&goto men
 goto :getok
 
 :get
 set /a .=!random!%%.+1
 set put=!put%.%! !put!
-::Ëæ»úÈ¡×î¼ÑµÄ×ß·¨
+::éšæœºå–æœ€ä½³çš„èµ°æ³•
 
 for /f "tokens=1-3" %%a in ("%put%") do (
         set var=!%%a%%b:*%%c=!srqponmlkjihgfedcba0
@@ -237,7 +237,7 @@ for /f "tokens=1-3" %%a in ("%put%") do (
         if "%%a" equ "pi" (if %%b lss 19 (set/a pos=var,poh=%%b-var+1) else (set/a poh=20-var,pos=%%b-19+var))
         if "%%a" equ "ni" (if %%b lss 19 (set/a pos=var,poh=19-%%b+var) else (set/a poh=var,pos=%%b-19+var))
 )
-echo  µçÄÔ×îºóÏÂÔÚ£º!z%pos%!!z%poh%!(%poh%)
+echo  ç”µè„‘æœ€åŽä¸‹åœ¨ï¼š!z%pos%!!z%poh%!(%poh%)
 
 :getok
 set zhi=!%zhi%!&set win=!zhi!!zhi!!zhi!!zhi!!zhi!
@@ -259,7 +259,7 @@ for %%a in ("li!poh! !lips!" "he!poh! !pos!" "sh!pos! !poh!" "pi!piph! !pips!" "
 set/a asc%zhi%+=1
 if !win! neq y goto :loop
 for /l %%a in (0,1,21) do (echo    !z%%a!!li%%a!)
-set/p=   !a%zhi%! %zhi%×Ó µÚ!asc%zhi%!ÊÖ  Ê¤³ö     <nul
+set/p=   !a%zhi%! %zhi%å­ ç¬¬!asc%zhi%!æ‰‹  èƒœå‡º     <nul
 pause
 endlocal&goto :restart
 :RECOR9
@@ -271,18 +271,18 @@ echo   /   /       /   /        / /   \_\/_/  \  \
 echo  /   /______ /   /_______  / /           \  \
 echo  /__________/___________/ /_/             \__\
 echo CCM
-echo µ±Ç°°æ±¾ºÅ %version%
-echo ±àÒëÊ±¼ä %builddate%
-echo ÄÚºË %codetype%
-echo ÄÚºË°æ±¾ %buildtype%
+echo å½“å‰ç‰ˆæœ¬å· %version%
+echo ç¼–è¯‘æ—¶é—´ %builddate%
+echo å†…æ ¸ %codetype%
+echo å†…æ ¸ç‰ˆæœ¬ %buildtype%
 echo 
 pause
 goto shouye1
 :RECOR10
 cls
-set /p q=ÊäÈëip»òÍøÖ·:
+set /p q=è¾“å…¥ipæˆ–ç½‘å€:
 :dddstart
-::ËÀÍöÖ®ping
+::æ­»äº¡ä¹‹ping
 cls
 ping %q% -t -l 65500
 goto shouye1
@@ -303,87 +303,87 @@ if '%errorlevel%' NEQ '0' (goto UACPrompt) else (goto UACAdmin)
 exit /B
 :UACAdmin
 cd /d "%~dp0"
-echo µ±Ç°ÔËÐÐÂ·¾¶ÊÇ£º%CD%
-echo ÒÑ»ñÈ¡¹ÜÀíÔ±È¨ÏÞ
+echo å½“å‰è¿è¡Œè·¯å¾„æ˜¯ï¼š%CD%
+echo å·²èŽ·å–ç®¡ç†å‘˜æƒé™
 :CMD
 cls
 echo.
-echo                            ¡¾ÐéÄâ´ÅÅÌ¹ÜÀí¡¿
+echo                            ã€è™šæ‹Ÿç£ç›˜ç®¡ç†ã€‘
 echo.
-echo                          1------------´ý²Ù×÷µÄ´ÅÅÌ
+echo                          1------------å¾…æ“ä½œçš„ç£ç›˜
 echo.
-echo                          2------------´´½¨ÐéÄâ´ÅÅÌ
+echo                          2------------åˆ›å»ºè™šæ‹Ÿç£ç›˜
 echo.
-echo                          3------------¹ÒÔØÐéÄâ´ÅÅÌ
+echo                          3------------æŒ‚è½½è™šæ‹Ÿç£ç›˜
 echo.
-echo                          4------------¶Ï¿ªÐéÄâ´ÅÅÌ
+echo                          4------------æ–­å¼€è™šæ‹Ÿç£ç›˜
 echo.
-echo                          5------------É¾³ý´ÅÅÌÎÄ¼þ
-set /p CS= ÇëÊäÈëÑ¡Ôñ------------
+echo                          5------------åˆ é™¤ç£ç›˜æ–‡ä»¶
+set /p CS= è¯·è¾“å…¥é€‰æ‹©------------
 if "%CS%"=="1"  goto cmd1
 if "%CS%"=="2"  goto cmd2
 if "%CS%"=="3"  goto cmd3
 if "%CS%"=="4"  goto cmd4
 if "%CS%"=="5"  goto cmd5
 :cmd1
-set /p VF= ÇëÊä´ý²Ù×÷µÄÐéÄâ´ÅÅÌÎÄ¼þÂ·¾¶------------
+set /p VF= è¯·è¾“å¾…æ“ä½œçš„è™šæ‹Ÿç£ç›˜æ–‡ä»¶è·¯å¾„------------
 goto CMD
 :cmd2
-set /p VU=ÇëÊäÈëÐéÄâ´ÅÅÌ´óÐ¡£¨µ¥Î»M£©------------
-echo  CREATE VDISK FILE="%VF%" MAXIMUM=%VU%>ÐéÄâ´ÅÅÌ²Ù×÷.txt
-diskpart /s  ÐéÄâ´ÅÅÌ²Ù×÷.txt
+set /p VU=è¯·è¾“å…¥è™šæ‹Ÿç£ç›˜å¤§å°ï¼ˆå•ä½Mï¼‰------------
+echo  CREATE VDISK FILE="%VF%" MAXIMUM=%VU%>è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
+diskpart /s  è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
 pause
 goto CMD
 :cmd3
-echo SELECT VDISK FILE="%VF%">ÐéÄâ´ÅÅÌ²Ù×÷.txt
-echo attach vdisk>>ÐéÄâ´ÅÅÌ²Ù×÷.txt
-diskpart /s  ÐéÄâ´ÅÅÌ²Ù×÷.txt
+echo SELECT VDISK FILE="%VF%">è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
+echo attach vdisk>>è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
+diskpart /s  è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
 pause
 goto CMD
 :cmd4
-echo SELECT VDISK FILE="%VF%">ÐéÄâ´ÅÅÌ²Ù×÷.txt
-echo detach vdisk>>ÐéÄâ´ÅÅÌ²Ù×÷.txt
-diskpart /s  ÐéÄâ´ÅÅÌ²Ù×÷.txt
+echo SELECT VDISK FILE="%VF%">è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
+echo detach vdisk>>è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
+diskpart /s  è™šæ‹Ÿç£ç›˜æ“ä½œ.txt
 pause
 goto CMD
 :cmd5
 del /f /q %VF%
-echo ³É¹¦É¾³ý´ÅÅÌVHD/VHDXÔ´ÎÄ¼þÎÄ¼þ
+echo æˆåŠŸåˆ é™¤ç£ç›˜VHD/VHDXæºæ–‡ä»¶æ–‡ä»¶
 pause
 goto CMD
 :RECOR13
 cls
-title ¼ÓÃÜ³ÌÐò
-if EXIST "ÉÏÁËËøµÄÎÄ¼þ¼Ð" goto UNLOCK
-if NOT EXIST ¼ÓÃÜÎÄ¼þ goto MDLOCKER
+title åŠ å¯†ç¨‹åº
+if EXIST "ä¸Šäº†é”çš„æ–‡ä»¶å¤¹" goto UNLOCK
+if NOT EXIST åŠ å¯†æ–‡ä»¶ goto MDLOCKER
 :CONFIRM
-echo ÄúÈ·¶¨ÒªËø¶¨ÎÄ¼þ¼ÐÂð?(Y/N)¡ºY=ÊÇ-N=²»¡»
+echo æ‚¨ç¡®å®šè¦é”å®šæ–‡ä»¶å¤¹å—?(Y/N)ã€ŽY=æ˜¯-N=ä¸ã€
 set/p "cho=(more than)"
 if %cho%==Y goto LOCK
 if %cho%==y goto LOCK
 if %cho%==n goto END
 if %cho%==N goto END
-echo Ñ¡ÔñÎÞÐ§.
+echo é€‰æ‹©æ— æ•ˆ.
 goto CONFIRM
 :LOCK
-ren ¼ÓÃÜÎÄ¼þ "ÉÏÁËËøµÄÎÄ¼þ¼Ð"
-attrib +h +s "ÉÏÁËËøµÄÎÄ¼þ¼Ð"
-echo ÎÄ¼þ¼ÐÒÑËø¶¨
+ren åŠ å¯†æ–‡ä»¶ "ä¸Šäº†é”çš„æ–‡ä»¶å¤¹"
+attrib +h +s "ä¸Šäº†é”çš„æ–‡ä»¶å¤¹"
+echo æ–‡ä»¶å¤¹å·²é”å®š
 goto End
 :UNLOCK
-echo ÇëÊäÈëÃÜÂë´ò¿ªÎÄ¼þ¼Ð
+echo è¯·è¾“å…¥å¯†ç æ‰“å¼€æ–‡ä»¶å¤¹
 set/p "pass=(more than)"
 if NOT %pass%== %INPASSWORD% goto FAIL
-attrib -h -s "ÉÏÁËËøµÄÎÄ¼þ¼Ð"
-ren "ÉÏÁËËøµÄÎÄ¼þ¼Ð" ¼ÓÃÜÎÄ¼þ
-echo ÎÄ¼þ¼Ð½âËø³É¹¦
+attrib -h -s "ä¸Šäº†é”çš„æ–‡ä»¶å¤¹"
+ren "ä¸Šäº†é”çš„æ–‡ä»¶å¤¹" åŠ å¯†æ–‡ä»¶
+echo æ–‡ä»¶å¤¹è§£é”æˆåŠŸ
 goto End
 :FAIL
-echo ÃÜÂëÎÞÐ§
+echo å¯†ç æ— æ•ˆ
 goto end
 :MDLOCKER
-md ¼ÓÃÜÎÄ¼þ
-echo ¼ÓÃÜÎÄ¼þ ³É¹¦´´½¨
+md åŠ å¯†æ–‡ä»¶
+echo åŠ å¯†æ–‡ä»¶ æˆåŠŸåˆ›å»º
 goto End
 :End
 :RECOR14
@@ -399,15 +399,15 @@ echo %date%%time%
 ping -n 127.0.0.1>nul
 goto RECOR16
 :RECOR17
-echo ÇëÊäÈëÄúÒªÔì¼ÙµÄºÅ¶ÎÇ°Îå
+echo è¯·è¾“å…¥æ‚¨è¦é€ å‡çš„å·æ®µå‰äº”
 set /p hd=
-echo =>Q°óÔì¼ÙÊý¾Ý@Tisobd.txt
+echo =>Qç»‘é€ å‡æ•°æ®@Tisobd.txt
 set c=1
 :reset
 set i=10
 goto again
 :again
-title Ôì¼ÙÁË%c%´Î!
+title é€ å‡äº†%c%æ¬¡!
 set /a i+=1
 set /a c+=1
 setlocal enabledelayedexpansion
@@ -421,37 +421,37 @@ set mini=100
 set maxi=99999999
 set /a modi=!maxi!-!mini!+1
 set /a randi_num=!random!%%!modi!+!mini!
-echo %i%!randi_num! %hd%!rand_num!>>Q°óÔì¼ÙÊý¾Ý@Tisobd.txt
+echo %i%!randi_num! %hd%!rand_num!>>Qç»‘é€ å‡æ•°æ®@Tisobd.txt
 if %i%== 99 goto reset
 goto again
 :RECOR18
-rem È¡µÃ¹ÜÀíÔ±È¨ÏÞ£¨Õë¶ÔxpÒÔºóµÄÏµÍ³£©
+rem å–å¾—ç®¡ç†å‘˜æƒé™ï¼ˆé’ˆå¯¹xpä»¥åŽçš„ç³»ç»Ÿï¼‰
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 cd /d %~dp0
 :start
 color b
 cls
-title ÏµÍ³·À»ðÇ½¹ÜÀíÉèÖÃ
+title ç³»ç»Ÿé˜²ç«å¢™ç®¡ç†è®¾ç½®
 echo,
 echo,
-echo,                              ¡¶ÏµÍ³·À»ðÇ½¹ÜÀíÉèÖÃ¡·
+echo,                              ã€Šç³»ç»Ÿé˜²ç«å¢™ç®¡ç†è®¾ç½®ã€‹
 echo,
 echo ==========================================================================
-echo,  1£º·À»ðÇ½×´Ì¬¼ì²â    2£º¹Ø±Õ/¿ªÆô·À»ðÇ½  3£ºÒ»¼ü¹Ø±Õ/»Ö¸´ÎÄ¼þ¹²Ïí¶Ë¿Ú
+echo,  1ï¼šé˜²ç«å¢™çŠ¶æ€æ£€æµ‹    2ï¼šå…³é—­/å¼€å¯é˜²ç«å¢™  3ï¼šä¸€é”®å…³é—­/æ¢å¤æ–‡ä»¶å…±äº«ç«¯å£
 echo,
-echo,  4£º¹Ø±Õ/»Ö¸´3389¶Ë¿Ú 5£ºÆôÓÃ³£¹æ·þÎñ¶Ë¿Ú 6: ÉèÖÃ³ÌÐò¹æÔò
+echo,  4ï¼šå…³é—­/æ¢å¤3389ç«¯å£ 5ï¼šå¯ç”¨å¸¸è§„æœåŠ¡ç«¯å£ 6: è®¾ç½®ç¨‹åºè§„åˆ™
 echo,
-echo,  7£ºÉèÖÃ¶Ë¿Ú¹æÔò      8: ÉèÖÃip¹æÔò       9: Ìí¼ÓÀýÍâ¶Ë¿Ú
+echo,  7ï¼šè®¾ç½®ç«¯å£è§„åˆ™      8: è®¾ç½®ipè§„åˆ™       9: æ·»åŠ ä¾‹å¤–ç«¯å£
 echo,
-echo,  10:µ¼³ö/µ¼ÈëÅäÖÃ    11£º»Ö¸´Ä¬ÈÏ²ßÂÔ    12£º²éÑ¯¹æÔòÃû³Æ  13:É¾³ý¹æÔò
+echo,  10:å¯¼å‡º/å¯¼å…¥é…ç½®    11ï¼šæ¢å¤é»˜è®¤ç­–ç•¥    12ï¼šæŸ¥è¯¢è§„åˆ™åç§°  13:åˆ é™¤è§„åˆ™
 echo,
-echo,  00£ºÍË³ö£¡          14: ´ò¿ªÏµÍ³·À»ðÇ½¿ØÖÆÌ¨         
+echo,  00ï¼šé€€å‡ºï¼          14: æ‰“å¼€ç³»ç»Ÿé˜²ç«å¢™æŽ§åˆ¶å°         
 echo ==========================================================================
 echo,
 set num=
-set/p num=ÇëÊäÈëÉèÖÃÏîÄ¿ÐòºÅ[00£¬1-14]£º
-if /I "%num%"=="" echo ÊäÈëÎª¿Õ£¬ÇëÖØÐÂÊäÈë£¡ &pause&goto start
-echo %num%|findstr /be "[0-9]*" >nul && echo, || echo ÊäÈëÓÐÎó£¬ÇëÖØÐÂÊäÈë£¡ &&pause&&goto start
+set/p num=è¯·è¾“å…¥è®¾ç½®é¡¹ç›®åºå·[00ï¼Œ1-14]ï¼š
+if /I "%num%"=="" echo è¾“å…¥ä¸ºç©ºï¼Œè¯·é‡æ–°è¾“å…¥ï¼ &pause&goto start
+echo %num%|findstr /be "[0-9]*" >nul && echo, || echo è¾“å…¥æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼ &&pause&&goto start
 if %num%==1 goto 1
 if %num%==2 goto 2
 if %num%==3 goto 3
@@ -470,60 +470,60 @@ if %num%==00 goto 00
 goto start
 
 :1
-rem ×´Ì¬²éÑ¯
+rem çŠ¶æ€æŸ¥è¯¢
 netsh advfirewall show allprofiles
 pause
 goto start
 
 :2
-rem ¿ªÆô·À»ðÇ½·þÎñ
-choice /C YN /n /m "Æô¶¯·À»ðÇ½ÊäÈë Y, ¹Ø±Õ·À»ðÇ½ÊäÈë N  [Y/N]£º"
+rem å¼€å¯é˜²ç«å¢™æœåŠ¡
+choice /C YN /n /m "å¯åŠ¨é˜²ç«å¢™è¾“å…¥ Y, å…³é—­é˜²ç«å¢™è¾“å…¥ N  [Y/N]ï¼š"
 if %errorlevel% equ 1 (sc config MpsSvc start= auto>nul 2>nul
-                      netsh advfirewall set allprofiles state on >nul 2>nul &&echo,ÒÑ¿ªÆô·À»ðÇ½·þÎñ
+                      netsh advfirewall set allprofiles state on >nul 2>nul &&echo,å·²å¼€å¯é˜²ç«å¢™æœåŠ¡
                       netsh advfirewall set allprofiles firewallpolicy allowinbound,allowoutbound >nul
                       pause)
 if %errorlevel% equ 2 (netsh advfirewall set allprofiles state off >nul 2>nul
-                      sc config MpsSvc start= disabled >nul 2>nul &&echo,ÒÑ¹Ø±Õ·À»ðÇ½·þÎñ
+                      sc config MpsSvc start= disabled >nul 2>nul &&echo,å·²å…³é—­é˜²ç«å¢™æœåŠ¡
                       pause)
 goto start                             
 
 :3
-choice /C YN /n /m "Ò»¼ü¹Ø±ÕÎÄ¼þ¹²Ïí¶Ë¿ÚÊäÈë Y, Ò»¼ü»Ö¸´ÎÄ¼þ¹²Ïí¶Ë¿ÚÊäÈë N  [Y/N]£º"
-if %errorlevel% equ 1 ( REM Ò»¼ü¹Ø±ÕÎÄ¼þ¹²Ïí¶Ë¿Ú
+choice /C YN /n /m "ä¸€é”®å…³é—­æ–‡ä»¶å…±äº«ç«¯å£è¾“å…¥ Y, ä¸€é”®æ¢å¤æ–‡ä»¶å…±äº«ç«¯å£è¾“å…¥ N  [Y/N]ï¼š"
+if %errorlevel% equ 1 ( REM ä¸€é”®å…³é—­æ–‡ä»¶å…±äº«ç«¯å£
                       netsh advfirewall firewall del rule name="deny-TCP-445,135,137,138,139" >nul 2>nul
                       netsh advfirewall firewall del rule name="deny-UDP-445,135,137,138,139" >nul 2>nul
                                           netsh advfirewall firewall add rule name="deny-TCP-445,135,137,138,139" dir=in action=block protocol=TCP localport=445,135,137,138,139  >nul 2>nul
                       netsh advfirewall firewall add rule name="deny-UDP-445,135,137,138,139" dir=in action=block protocol=UDP localport=445,135,137,138,139  >nul 2>nul
-                      echo, &echo,TCP^&UDP[445,135,137,138,139]¶Ë¿ÚÒÑ¾­¹Ø±Õ
+                      echo, &echo,TCP^&UDP[445,135,137,138,139]ç«¯å£å·²ç»å…³é—­
                       pause
                       )
 
-if %errorlevel% equ 2 ( REM Ò»¼ü»Ö¸´ÎÄ¼þ¹²Ïí¶Ë¿Ú
+if %errorlevel% equ 2 ( REM ä¸€é”®æ¢å¤æ–‡ä»¶å…±äº«ç«¯å£
                       netsh advfirewall firewall del rule name="deny-TCP-445,135,137,138,139" >nul 2>nul
                       netsh advfirewall firewall del rule name="deny-UDP-445,135,137,138,139" >nul 2>nul
-                      echo, &echo,TCP^&UDP[445,135,137,138,139]¶Ë¿ÚÒÑ¾­»Ö¸´
+                      echo, &echo,TCP^&UDP[445,135,137,138,139]ç«¯å£å·²ç»æ¢å¤
                       pause
                       )
 goto start
 
                     
 :4
-rem ¹Ø±Õ/»Ö¸´3389¶Ë¿Ú  
-choice /C YN /n /m "¹Ø±Õ3389¶Ë¿ÚÊäÈë Y, »Ö¸´3389¶Ë¿ÚÊäÈë N  [Y/N]£º"
-if %errorlevel% equ 1 ( rem ×èÖ¹3389·þÎñ¶Ë¿Ú
+rem å…³é—­/æ¢å¤3389ç«¯å£  
+choice /C YN /n /m "å…³é—­3389ç«¯å£è¾“å…¥ Y, æ¢å¤3389ç«¯å£è¾“å…¥ N  [Y/N]ï¼š"
+if %errorlevel% equ 1 ( rem é˜»æ­¢3389æœåŠ¡ç«¯å£
                       netsh advfirewall firewall delete rule name=block-server-3389 protocol=tcp localport=3389  >nul 2>nul
                                                     netsh advfirewall firewall add rule name=block-server-3389 dir=in action=block protocol=TCP localport=3389  >nul 2>nul
-                      echo,TCP[3389]¶Ë¿ÚÒÑ¾­×èÖ¹
+                      echo,TCP[3389]ç«¯å£å·²ç»é˜»æ­¢
                       pause)
-if %errorlevel% equ 2 ( rem »Ö¸´3389·þÎñ²ßÂÔ
+if %errorlevel% equ 2 ( rem æ¢å¤3389æœåŠ¡ç­–ç•¥
                       netsh advfirewall firewall delete rule name=block-server-3389 protocol=tcp localport=3389  >nul 2>nul
-                      echo,TCP[3389]¶Ë¿ÚÒÑ¾­»Ö¸´
+                      echo,TCP[3389]ç«¯å£å·²ç»æ¢å¤
                       pause)
 goto start
          
 :5
-rem ÆôÓÃ³£¹æ·þÎñ¶Ë¿Ú
-choice /C 123456789 /n /m "[1£ºAllow Ping] [2¡¢FTP] [3¡¢SSH] [4¡¢Telnet] [5¡¢mail] [6¡¢HTTP HTTPS] [7¡¢TFTP] >>>>>>>>>>>>>>>> ÊäÈëÐòºÅ¡¾1 / 2 / 3 ...¡¿£º"
+rem å¯ç”¨å¸¸è§„æœåŠ¡ç«¯å£
+choice /C 123456789 /n /m "[1ï¼šAllow Ping] [2ã€FTP] [3ã€SSH] [4ã€Telnet] [5ã€mail] [6ã€HTTP HTTPS] [7ã€TFTP] >>>>>>>>>>>>>>>> è¾“å…¥åºå·ã€1 / 2 / 3 ...ã€‘ï¼š"
 if %errorlevel% equ 1 ( netsh advfirewall firewall delete rule name="Allow Ping" protocol=icmpv4  >nul 2>nul
                                            netsh advfirewall firewall add rule name="Allow Ping" dir=in protocol=icmpv4 action=allow  >nul 2>nul
                                            rem ICMP Allow incoming
@@ -561,86 +561,86 @@ goto start
 
 
 :6
-rem ÉèÖÃ³ÌÐò¹æÔò
-rem ×èÖ¹%i%³ÌÐò³öÕ¾¹æÔò
+rem è®¾ç½®ç¨‹åºè§„åˆ™
+rem é˜»æ­¢%i%ç¨‹åºå‡ºç«™è§„åˆ™
 rem netsh advfirewall firewall del rule name="%i%">nul 2>nul
 rem netsh advfirewall firewall add rule name="%i%" program=%j% action=block dir=out>nul
 pause
 goto start
 
 :7
-rem ÉèÖÃ¶Ë¿Ú¹æÔò
+rem è®¾ç½®ç«¯å£è§„åˆ™
 set name=
 set port=
 set protocol=
 set dir=
 set action=
-set /p name=¶¨ÒåÒ»¸ö¹æÔòÃû³Æ(Èç deny-TCP-445,Allow-tcp-3389£©:
-set /P action=ÔÊÐí»¹ÊÇ×èÖ¹¹æÔò£¨Èç allow/block):
-set /p port=ÊäÈëÒª×èÖ¹µÄ¶Ë¿ÚºÅ(Á¬Ðø¶Ë¿Ú:1-65535;²»Á¬Ðø¶Ë¿Ú:137,139,445)£º
-set /p protocol=Ð­ÒéÀà±ð(TCP/udp)£º
-echo Ô¤ÖÆ·½ÏòÎª£º½øÈë
+set /p name=å®šä¹‰ä¸€ä¸ªè§„åˆ™åç§°(å¦‚ deny-TCP-445,Allow-tcp-3389ï¼‰:
+set /P action=å…è®¸è¿˜æ˜¯é˜»æ­¢è§„åˆ™ï¼ˆå¦‚ allow/block):
+set /p port=è¾“å…¥è¦é˜»æ­¢çš„ç«¯å£å·(è¿žç»­ç«¯å£:1-65535;ä¸è¿žç»­ç«¯å£:137,139,445)ï¼š
+set /p protocol=åè®®ç±»åˆ«(TCP/udp)ï¼š
+echo é¢„åˆ¶æ–¹å‘ä¸ºï¼šè¿›å…¥
 echo,
 netsh advfirewall firewall add rule name="%name%" dir=in protocol=%protocol% localport=%port% action=%action% >nul
 echo,------------------------------------------------------------------------
-echo,¹æÔòÃûÎª:[%name%] ¶¯×÷Îª£º%action% ·½ÏòÎª:½øÈë Ð­ÒéÎª:%protocol%  ¶Ë¿ÚÎª£º%port% µÄ×èÖ¹¹æÔòÒÑ¾­½¨Á¢¡£
+echo,è§„åˆ™åä¸º:[%name%] åŠ¨ä½œä¸ºï¼š%action% æ–¹å‘ä¸º:è¿›å…¥ åè®®ä¸º:%protocol%  ç«¯å£ä¸ºï¼š%port% çš„é˜»æ­¢è§„åˆ™å·²ç»å»ºç«‹ã€‚
 echo,------------------------------------------------------------------------
 pause
 goto start
 
 :8
-rem ÉèÖÃip¹æÔò
+rem è®¾ç½®ipè§„åˆ™
 set name=
 set action=
 set remoteip=
-set /p name=ÆðÒ»¸öip¹æÔòÃû³Æ(Èç deny-ip-1.1.1.1,Allow-ip-2.2.2.2£©:
-set /P action=ÔÊÐí»¹ÊÇ×èÖ¹¹æÔò£¨Èç allow/block):
-set /p remoteip=Ô¶³ÌipµØÖ·(Èç£º8.8.8.8)£º
-echo Ô¤ÖÆ·½ÏòÎª£º½øÈë
+set /p name=èµ·ä¸€ä¸ªipè§„åˆ™åç§°(å¦‚ deny-ip-1.1.1.1,Allow-ip-2.2.2.2ï¼‰:
+set /P action=å…è®¸è¿˜æ˜¯é˜»æ­¢è§„åˆ™ï¼ˆå¦‚ allow/block):
+set /p remoteip=è¿œç¨‹ipåœ°å€(å¦‚ï¼š8.8.8.8)ï¼š
+echo é¢„åˆ¶æ–¹å‘ä¸ºï¼šè¿›å…¥
 echo,
 netsh advfirewall firewall add rule name="%name%" dir=in  action=%action% remoteip=%remoteip% >nul
 echo,------------------------------------------------------------------------
-echo,¹æÔòÃûÎª:[%name%] ¶¯×÷Îª£º%action% ·½ÏòÎª:½øÈë Ô¶³ÌipÎª£º%remoteip% µÄ×èÖ¹¹æÔòÒÑ¾­½¨Á¢¡£
+echo,è§„åˆ™åä¸º:[%name%] åŠ¨ä½œä¸ºï¼š%action% æ–¹å‘ä¸º:è¿›å…¥ è¿œç¨‹ipä¸ºï¼š%remoteip% çš„é˜»æ­¢è§„åˆ™å·²ç»å»ºç«‹ã€‚
 echo,------------------------------------------------------------------------
 pause
 goto start
 
 :9
-rem ÏÂÃæÌí¼ÓÒª¼ÓÈëµ½ÀýÍâµÄ¶Ë¿ÚºÅ
-rem ÕâÀïÊ¹ÓÃall,±íÊ¾TCPÓëUDP.Èç¹ûÖ»ÊÇtcp»òUDP,¿ÉÒÔ¸Ä³ÉÏàÓ¦µÄ
+rem ä¸‹é¢æ·»åŠ è¦åŠ å…¥åˆ°ä¾‹å¤–çš„ç«¯å£å·
+rem è¿™é‡Œä½¿ç”¨all,è¡¨ç¤ºTCPä¸ŽUDP.å¦‚æžœåªæ˜¯tcpæˆ–UDP,å¯ä»¥æ”¹æˆç›¸åº”çš„
 set name=
 set port=
-set /p name=ÆðÒ»¸öÀýÍâ¹æÔòÃû³Æ(Èç polycom-port-123£©:
-set /p port=Ö¸¶¨ÀýÍâµÄ¶Ë¿ÚºÅ£¨Èç 25;20-21)
+set /p name=èµ·ä¸€ä¸ªä¾‹å¤–è§„åˆ™åç§°(å¦‚ polycom-port-123ï¼‰:
+set /p port=æŒ‡å®šä¾‹å¤–çš„ç«¯å£å·ï¼ˆå¦‚ 25;20-21)
 netsh firewall set portopening all %port% "%name%" enable
 
-rem É¾³ýµÄ·½·¨°ÑÀïÃæµÄsetÓÃdelete´úÌæ£¬ºóÃæµÄÃû×ÖºÍenableÓÃ¿Õ¸ñ´úÌæ
+rem åˆ é™¤çš„æ–¹æ³•æŠŠé‡Œé¢çš„setç”¨deleteä»£æ›¿ï¼ŒåŽé¢çš„åå­—å’Œenableç”¨ç©ºæ ¼ä»£æ›¿
 rem netsh firewall delete portopening all 3230
 pause
 goto start
 
 :10
-rem µ¼³ö·À»ðÇ½ÅäÖÃµ½ÎÄ¼þ
-choice /C YN /n /m "µ¼³ö·À»ðÇ½ÅäÖÃÊäÈë Y, »Ö¸´·À»ðÇ½ÅäÖÃÊäÈë N  [Y/N]£º"
+rem å¯¼å‡ºé˜²ç«å¢™é…ç½®åˆ°æ–‡ä»¶
+choice /C YN /n /m "å¯¼å‡ºé˜²ç«å¢™é…ç½®è¾“å…¥ Y, æ¢å¤é˜²ç«å¢™é…ç½®è¾“å…¥ N  [Y/N]ï¼š"
 if %errorlevel% ==1 (IF EXIST exportfile.pol DEL /Q /F outfirewall.pol >NUL 2>NUL
                                         netsh advfirewall export ".\outfirewall.pol" >NUL
                                         echo,
-                                        IF EXIST outfirewall.pol echo ·À»ðÇ½ÅäÖÃÎÄ¼þµ¼³ö³É¹¦
-                                        FOR /F "delims==" %%i IN ('dir /b outfirewall.pol') DO @echo ÎÄ¼þÎ»ÖÃ%%~dpi%%i  Éú³ÉÊ±¼ä%%~ti
+                                        IF EXIST outfirewall.pol echo é˜²ç«å¢™é…ç½®æ–‡ä»¶å¯¼å‡ºæˆåŠŸ
+                                        FOR /F "delims==" %%i IN ('dir /b outfirewall.pol') DO @echo æ–‡ä»¶ä½ç½®%%~dpi%%i  ç”Ÿæˆæ—¶é—´%%~ti
                                         pause
                                         goto start
                                         )
 :importfile
 if %errorlevel% ==2 (
-                                        echo, &echo ½«µ¼ÈëÎÄ¼þÃû¸´ÖÆµ½µ±Ç°Ä¿Â¼²¢¸üÃûÎªinfirewall.pol&pause
+                                        echo, &echo å°†å¯¼å…¥æ–‡ä»¶åå¤åˆ¶åˆ°å½“å‰ç›®å½•å¹¶æ›´åä¸ºinfirewall.pol&pause
                                     if not exist infirewall.pol (
                                                 echo,
-                                                echo infirewall.polÎÄ¼þ²»´æÔÚ
+                                                echo infirewall.polæ–‡ä»¶ä¸å­˜åœ¨
                                                 echo,
                                                 goto importfile
                                         ) else (
                                                 echo,
-                                                netsh advfirewall import infirewall.pol >nul &&echo,·À»ðÅäÖÃÎÄ¼þµ¼Èë³É¹¦£¡
+                                                netsh advfirewall import infirewall.pol >nul &&echo,é˜²ç«é…ç½®æ–‡ä»¶å¯¼å…¥æˆåŠŸï¼
                                                 echo,
                                         pause)
                                         goto start
@@ -649,36 +649,36 @@ if %errorlevel% ==2 (
 goto start
 
 :11
-rem »Ö¸´·À»ðÇ½Ä¬ÈÏ²ßÂÔ
+rem æ¢å¤é˜²ç«å¢™é»˜è®¤ç­–ç•¥
 netsh advfirewall reset
-echo,ÒÑ¾­»Ö¸´ÎªÄ¬ÈÏ·À»ðÇ½²ßÂÔ
+echo,å·²ç»æ¢å¤ä¸ºé»˜è®¤é˜²ç«å¢™ç­–ç•¥
 pause
 goto start
 
 :12
-rem ¸ù¾Ý¹æÔòÃû³ÆÈçxxxx²éÑ¯ÄÚÈÝ
-netsh advfirewall firewall show rule name=all type=static verbose | find /i "¹æÔòÃû³Æ:" >firewall%date:~0,4%-%date:~5,2%-%date:~8,2%.txt
+rem æ ¹æ®è§„åˆ™åç§°å¦‚xxxxæŸ¥è¯¢å†…å®¹
+netsh advfirewall firewall show rule name=all type=static verbose | find /i "è§„åˆ™åç§°:" >firewall%date:~0,4%-%date:~5,2%-%date:~8,2%.txt
 start notepad firewall%date:~0,4%-%date:~5,2%-%date:~8,2%.txt
 rem del firewall%date:~0,4%-%date:~5,2%-%date:~8,2%.txt
 set serfile=
-set /P serfile=ÊäÈë²éÑ¯¹æÔòÃû³Æ:
+set /P serfile=è¾“å…¥æŸ¥è¯¢è§„åˆ™åç§°:
 NETSH ADVFIREWALL FIREWALL SHOW RULE NAME="%serfile%" verbose
 pause
 goto start
 
 :13
-rem É¾³ý¹æÔò
-echo,É¾³ýµÄ¹æÔòÃû³Æ¿ÉÒÔÍ¨¹ý[12£º²éÑ¯¹æÔòÃû³Æ]ÕÒµ½
+rem åˆ é™¤è§„åˆ™
+echo,åˆ é™¤çš„è§„åˆ™åç§°å¯ä»¥é€šè¿‡[12ï¼šæŸ¥è¯¢è§„åˆ™åç§°]æ‰¾åˆ°
 echo,
 set delfile=
-set /P delfile=ÊäÈëÒªÉ¾³ýµÄ¹æÔòÃû³Æ:
-netsh advfirewall firewall delete rule name="%delfile%">nul &&echo,ÒÑÉ¾³ý%delfile%¹æÔò
+set /P delfile=è¾“å…¥è¦åˆ é™¤çš„è§„åˆ™åç§°:
+netsh advfirewall firewall delete rule name="%delfile%">nul &&echo,å·²åˆ é™¤%delfile%è§„åˆ™
 echo,
 pause
 goto start
 
 :14
-echo,ÉÔµÈÆ¬¿Ì......
+echo,ç¨ç­‰ç‰‡åˆ»......
 ping -n 2 127.0.0.1>nul
 start %windir%\system32\WF.msc
 goto start
@@ -735,79 +735,79 @@ ping -l 65500 192.168.6.58
 ping -l 65500 192.168.6.59
 goto RECOR19
 ::beginningofmain
-::CCM×Ô¶¨ÓÃ»§²ã
+::CCMè‡ªå®šç”¨æˆ·å±‚
 :CCMDEV1
 cls
-echo ÇëÑ¡Ôñ¼æÈÝÄ£Ê½»òÎÞµÐÄ£Ê½
-echo ¼æÈÝÄ£Ê½Ö»Ê¹ÓÃ¾É°æ»ªÈñÉ±ÊÖ·½°¸£¬ÎÞµÐÄ£Ê½Ö¸Ê¹ÓÃ¶ÏÍø·½Ê½À´´ïµ½¶Ô»ªÈñµÄÒ»»÷ÖÂÃü¡£
-echo ²»¹ýÒ²ÍÆ¼öÊ¹ÓÃProgramKiller ±ÈÈÎºÎ°æ±¾µÄHuaRuiKiller¶¼¸üÓÐÐ§£¬¿ÉÒÔ×îÐ¡»¯ÀÏÊ¦ÇÐÆÁµÈ¡£ÆäÐ§¹ûÄÜ´ïµ½ÓëÐÂ·½°¸ÏàæÇÃÀ
-echo ÊäÈë1Ñ¡Ôñ¼æÈÝÄ£Ê½ ÊäÈë2Ñ¡ÔñÎÞµÐÄ£Ê½ ÊäÈë3Ò»¼ü»Ö¸´ÍøÂç
+echo è¯·é€‰æ‹©å…¼å®¹æ¨¡å¼æˆ–æ— æ•Œæ¨¡å¼
+echo å…¼å®¹æ¨¡å¼åªä½¿ç”¨æ—§ç‰ˆåŽé”æ€æ‰‹æ–¹æ¡ˆï¼Œæ— æ•Œæ¨¡å¼æŒ‡ä½¿ç”¨æ–­ç½‘æ–¹å¼æ¥è¾¾åˆ°å¯¹åŽé”çš„ä¸€å‡»è‡´å‘½ã€‚
+echo ä¸è¿‡ä¹ŸæŽ¨èä½¿ç”¨ProgramKiller æ¯”ä»»ä½•ç‰ˆæœ¬çš„HuaRuiKilleréƒ½æ›´æœ‰æ•ˆï¼Œå¯ä»¥æœ€å°åŒ–è€å¸ˆåˆ‡å±ç­‰ã€‚å…¶æ•ˆæžœèƒ½è¾¾åˆ°ä¸Žæ–°æ–¹æ¡ˆç›¸åª²ç¾Ž
+echo è¾“å…¥1é€‰æ‹©å…¼å®¹æ¨¡å¼ è¾“å…¥2é€‰æ‹©æ— æ•Œæ¨¡å¼ è¾“å…¥3ä¸€é”®æ¢å¤ç½‘ç»œ
 set /p aqq1=
 if /i '%aqq1%'=='1' goto RECOR6
 if /i '%aqq1%'=='2' goto RECOR3
 if /i '%aqq1%'=='3' goto RECOR4
 :CCMDEV2
 cls
-echo ÊÇ·ñÊ¹ÓÃÐÂ·½°¸?
-set /p aqqq=1 ÊÇ 2 ²»ÊÇ
+echo æ˜¯å¦ä½¿ç”¨æ–°æ–¹æ¡ˆ?
+set /p aqqq=1 æ˜¯ 2 ä¸æ˜¯
 if /i '%aqqq%'=='1' goto RECOR1
 if /i '%aqqq%'=='2' goto RECOR2
 echo Error
 goto CCMDEV2
 :CCMDEV3
 cls
-echo 2.0ÈÕÖ¾
-echo 1.0ÊºÉ½´úÂë È«²¿ÖØ¹¹
-echo Ê¹ÓÃÐÂÂß¼­£¬Ð§ÂÊÉÏÉý50%
-echo 3.0ÈÕÖ¾
-echo ÊºÉ½´úÂë¸ù±¾Ð´²»ÏÂÈ¥ 3.0¼ÌÐøÓÅ»¯
-echo 4.0ÈÕÖ¾ Ãû³Æ¸ÄÎªCCM(CloudComputerManager)
-echo 5.0ÈÕÖ¾ ´úÂëÏà±È1.0»ù±¾È«²¿ÖØ¹¹£¬ÒÆ³ýÒ»Ð©ÈÝÒ×µ¼ÖÂbugµÄ¹¦ÄÜ
-echo 6.0ÈÕÖ¾È±Ê§
-echo 7.0ÐÞ¸´Ò»Ð©µ×²ãbug
-echo 8.0Ìí¼Ó¹¦ÄÜ,´ò¿ª×Ô¶¯¼ì²é¸üÐÂ
-echo 9.0-10.0 Ìí¼ÓBat±à¼­Æ÷
-echo Xeon°æ±¾Ìí¼Ó¶àÖÖ¹¦ÄÜ
-echo 12.0 ÒÔÓÅ»¯¸üÐÂÎªÖ÷ È¥³ýÁËÒ»Ð©ÎÞÓÃ¹¦ÄÜÒÔ¼°½Ó¿Ú
-echo 13.0 È¥³ý´òÓ¡ÈÕÖ¾
-echo 13.1 ¸ÄÓÃÐÂÄÚºË
-echo 14.1 ¼ÓÈëÐéÄâ´ÅÅÌ
-echo 15.1 ¼ÓÈëÎÄ¼þ¼Ð¼ÓÃÜ
+echo 2.0æ—¥å¿—
+echo 1.0å±Žå±±ä»£ç  å…¨éƒ¨é‡æž„
+echo ä½¿ç”¨æ–°é€»è¾‘ï¼Œæ•ˆçŽ‡ä¸Šå‡50%
+echo 3.0æ—¥å¿—
+echo å±Žå±±ä»£ç æ ¹æœ¬å†™ä¸ä¸‹åŽ» 3.0ç»§ç»­ä¼˜åŒ–
+echo 4.0æ—¥å¿— åç§°æ”¹ä¸ºCCM(CloudComputerManager)
+echo 5.0æ—¥å¿— ä»£ç ç›¸æ¯”1.0åŸºæœ¬å…¨éƒ¨é‡æž„ï¼Œç§»é™¤ä¸€äº›å®¹æ˜“å¯¼è‡´bugçš„åŠŸèƒ½
+echo 6.0æ—¥å¿—ç¼ºå¤±
+echo 7.0ä¿®å¤ä¸€äº›åº•å±‚bug
+echo 8.0æ·»åŠ åŠŸèƒ½,æ‰“å¼€è‡ªåŠ¨æ£€æŸ¥æ›´æ–°
+echo 9.0-10.0 æ·»åŠ Batç¼–è¾‘å™¨
+echo Xeonç‰ˆæœ¬æ·»åŠ å¤šç§åŠŸèƒ½
+echo 12.0 ä»¥ä¼˜åŒ–æ›´æ–°ä¸ºä¸» åŽ»é™¤äº†ä¸€äº›æ— ç”¨åŠŸèƒ½ä»¥åŠæŽ¥å£
+echo 13.0 åŽ»é™¤æ‰“å°æ—¥å¿—
+echo 13.1 æ”¹ç”¨æ–°å†…æ ¸
+echo 14.1 åŠ å…¥è™šæ‹Ÿç£ç›˜
+echo 15.1 åŠ å…¥æ–‡ä»¶å¤¹åŠ å¯†
 pause
 goto shouye1
 :CCMDEV4
 cls
-echo ÇëÄúÉè¶¨¼ÓÃÜÎÄ¼þ¼ÐÃÜÂë
+echo è¯·æ‚¨è®¾å®šåŠ å¯†æ–‡ä»¶å¤¹å¯†ç 
 set /p inpassword=
 goto RECOR13
 :CCMDEV5
 title File Crypto
-echo ÎÄ¼þ¼ÓÃÜ¶Ô»·¾³ÓÐºÜ´óÒªÇó£¬²»½¨ÒéÐ¡°×Ê¹ÓÃ
-echo ÇëÑ¡ÔñÄ£Ê½
-echo 1.µ¥¸öÎÄ¼þ¼ÓÃÜ 2.¶à¸öÎÄ¼þ¼ÓÃÜ 3.ÍË³ö
+echo æ–‡ä»¶åŠ å¯†å¯¹çŽ¯å¢ƒæœ‰å¾ˆå¤§è¦æ±‚ï¼Œä¸å»ºè®®å°ç™½ä½¿ç”¨
+echo è¯·é€‰æ‹©æ¨¡å¼
+echo 1.å•ä¸ªæ–‡ä»¶åŠ å¯† 2.å¤šä¸ªæ–‡ä»¶åŠ å¯† 3.é€€å‡º
 set /p Crpmode=
 if /i '%Crpmode%'=='1' goto Nex
 if /i '%Crpmode%'=='2' goto Mlo
 if /i '%Crpmode%'=='3' goto shouye1
 goto CCMDEV5
 :Nex
-echo Çë½«Òª¼ÓÃÜµÄÎÄ¼þÃüÃûÎªCrp ¸ñÊ½rar ·ÅÔÚÄ¿Â¼Àï
+echo è¯·å°†è¦åŠ å¯†çš„æ–‡ä»¶å‘½åä¸ºCrp æ ¼å¼rar æ”¾åœ¨ç›®å½•é‡Œ
 pause
 goto RECOR14
 :Mlo
-echo Çë½«ËùÓÐÐèÒª¼ÓÃÜµÄÎÄ¼þ·ÅÔÚ±¾Ä¿Â¼
-echo ¼ÓÃÜÍê³ÉÄ¿Â¼:c:\Crypto
+echo è¯·å°†æ‰€æœ‰éœ€è¦åŠ å¯†çš„æ–‡ä»¶æ”¾åœ¨æœ¬ç›®å½•
+echo åŠ å¯†å®Œæˆç›®å½•:c:\Crypto
 pause
 goto RECOR15
 :shouye1
 cls
-title %version% ±£ÁôËùÓÐÈ¨Àû ÏÖÔÚÊÇ±±¾©Ê±¼ä %date%
+title %version% ä¿ç•™æ‰€æœ‰æƒåˆ© çŽ°åœ¨æ˜¯åŒ—äº¬æ—¶é—´ %date%
 color 6F
-echo Ê¹ÓÃ´ËÈí¼þ´ú±íÄúÍ¬ÒâÎÒÃÇµÄÓÃ»§Ð­Òé
-echo ÇëÇ°Íùgithub²é¿´ÓÃ»§Ð­Òé
-echo               Ñ¡Ôñ
-echo 1.»ú·¿¹¤¾ß  2.ÔÆµçÄÔ¹¤¾ß 3.ÓéÀÖ¹¦ÄÜ  4.¿ª·¢ÐÅÏ¢ 5.ÊµÓÃ¹¦ÄÜ X.ÍË³ö
-set /p isaw=ÇëÑ¡Ôñ 
+echo ä½¿ç”¨æ­¤è½¯ä»¶ä»£è¡¨æ‚¨åŒæ„æˆ‘ä»¬çš„ç”¨æˆ·åè®®
+echo è¯·å‰å¾€githubæŸ¥çœ‹ç”¨æˆ·åè®®
+echo               é€‰æ‹©
+echo 1.æœºæˆ¿å·¥å…·  2.äº‘ç”µè„‘å·¥å…· 3.å¨±ä¹åŠŸèƒ½  4.å¼€å‘ä¿¡æ¯ 5.å®žç”¨åŠŸèƒ½ X.é€€å‡º
+set /p isaw=è¯·é€‰æ‹© 
 if /i '%isaw%'=='1' goto CCMDEVC1
 if /i '%isaw%'=='2' goto CCMDEVC2
 if /i '%isaw%'=='3' goto CCMDEVC3
@@ -817,44 +817,44 @@ if /i '%isaw%'=='X' exit
 goto shouye1
 :CCMDEVC1
 cls
-echo               Ñ¡Ôñ
-echo 1.HuaRuiKiller Lite  2.»ú·¿É¨Éä 3.¼ÆËã»úÈó¿Î  X.·µ»ØÖ÷Ò³
-set /p aqqqqq=ÇëÑ¡Ôñ 
+echo               é€‰æ‹©
+echo 1.HuaRuiKiller Lite  2.æœºæˆ¿æ‰«å°„ 3.è®¡ç®—æœºæ¶¦è¯¾  X.è¿”å›žä¸»é¡µ
+set /p aqqqqq=è¯·é€‰æ‹© 
 if /i '%aqqqqq%'=='1' goto RECOR6
 if /i '%aqqqqq%'=='2' goto RRECOR19
 if /i '%aqqqqq%'=='3' goto CCMDEV1
 if /i '%aqqqqq%'=='X' goto shouye1
 :CCMDEVC2
 cls
-echo               Ñ¡Ôñ
-echo 1.¹Ø»ú  2.µ¯³öCÅÌ 3.ping²âÊÔ  X.·µ»ØÖ÷Ò³
-set /p ahgfd=ÇëÑ¡Ôñ 
+echo               é€‰æ‹©
+echo 1.å…³æœº  2.å¼¹å‡ºCç›˜ 3.pingæµ‹è¯•  X.è¿”å›žä¸»é¡µ
+set /p ahgfd=è¯·é€‰æ‹© 
 if /i '%ahgfd%'=='1' shutdown
 if /i '%ahgfd%'=='2' goto RECOR11
 if /i '%ahgfd%'=='3' goto RECOR10
 if /i '%ahgfd%'=='X' goto shouye1
 :CCMDEVC3
 cls
-echo               Ñ¡Ôñ
-echo 1.Ð¡ÓÎÏ·  2.Ê±ÖÓ  X.·µ»ØÖ÷Ò³
-set /p aqwe=ÇëÑ¡Ôñ 
+echo               é€‰æ‹©
+echo 1.å°æ¸¸æˆ  2.æ—¶é’Ÿ  X.è¿”å›žä¸»é¡µ
+set /p aqwe=è¯·é€‰æ‹© 
 if /i '%aqwe%'=='1' goto RECOR8
 if /i '%aqwe%'=='2' goto RECOR16
 if /i '%aqwe%'=='X' goto shouye1
 :CCMDEVC4
 cls
-echo               Ñ¡Ôñ
-echo 1.°æ±¾ÐÅÏ¢  2.¸üÐÂÈÕÖ¾ 3.¼ì²é¸üÐÂ  X.·µ»ØÖ÷Ò³
-set /p akjh=ÇëÑ¡Ôñ 
+echo               é€‰æ‹©
+echo 1.ç‰ˆæœ¬ä¿¡æ¯  2.æ›´æ–°æ—¥å¿— 3.æ£€æŸ¥æ›´æ–°  X.è¿”å›žä¸»é¡µ
+set /p akjh=è¯·é€‰æ‹© 
 if /i '%akjh%'=='1' goto RECOR9
 if /i '%akjh%'=='2' goto CCMDEV3
 if /i '%akjh%'=='3' goto RECOR0
 if /i '%akjh%'=='X' goto shouye1
 :CCMDEVC5
 cls
-echo               Ñ¡Ôñ
-echo 1.Q°óËãÁ¦²âÊÔ  2.ÏµÍ³·À»ðÇ½¹ÜÀí 3.ÐéÄâ´ÅÅÌ  4.¼ÓÃÜÎÄ¼þ¼Ð 5.ÎÄ¼þ¼ÓÃÜ 6.BAT±à¼­Æ÷ X.·µ»ØÖ÷Ò³
-set /p fakjh=ÇëÑ¡Ôñ 
+echo               é€‰æ‹©
+echo 1.Qç»‘ç®—åŠ›æµ‹è¯•  2.ç³»ç»Ÿé˜²ç«å¢™ç®¡ç† 3.è™šæ‹Ÿç£ç›˜  4.åŠ å¯†æ–‡ä»¶å¤¹ 5.æ–‡ä»¶åŠ å¯† 6.BATç¼–è¾‘å™¨ X.è¿”å›žä¸»é¡µ
+set /p fakjh=è¯·é€‰æ‹© 
 if /i '%fakjh%'=='1' goto RECOR17
 if /i '%fakjh%'=='2' goto RECOR18
 if /i '%fakjh%'=='3' goto RECOR12
